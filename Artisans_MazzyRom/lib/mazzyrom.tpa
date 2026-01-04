@@ -3,6 +3,20 @@ COPY ~%MOD_FOLDER%/BAM~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/CRE~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/ITM~ ~OVERRIDE~
 
+ACTION_DEFINE_ASSOCIATIVE_ARRAY mazzy_4xxx BEGIN
+    ~SLEEPING_WOMAN_HALFLING~ => ~SLEEPING_WOMAN_HALFLING~
+  END
+  ACTION_PHP_EACH mazzy_4xxx AS folder => symbol BEGIN
+    ACTION_BASH_FOR ~%MOD_FOLDER%/animations/%folder%~ ~.+\.bam~ ~%MOD_FOLDER%/animations/%folder%~ ~.+\.bmp~ BEGIN
+      COPY ~%BASH_FOR_FILESPEC%~ ~override~
+    END
+    LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x4000 RET slot END
+    LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+    COPY ~%MOD_FOLDER%/animations/%folder%/4xxx.ini~ ~override/%hexNumber%.ini~
+    OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
+    APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
+END
+
 ////////////////////////////////////////
 /////////AUDIO//////////////////////////
 ////////////////////////////////////////
@@ -80,6 +94,7 @@ WRITE_ASCII 0x280 ~C0MAZVAM~ #32 // death variable
 WRITE_ASCII 0X34 ~C0MAZVAM~ #8   //small portrait
 SAY NAME1 ~Mazzy~
 SAY NAME2 ~Mazzy~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~SLEEPING_WOMAN_HALFLING~))
 
 COPY_EXISTING ~C0MAZBOD.ITM~ ~OVERRIDE~
 SAY NAME1 ~Mazzy's Body~
