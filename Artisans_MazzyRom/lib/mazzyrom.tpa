@@ -53,6 +53,10 @@ COPY_EXISTING ~AR6200.BCS~ ~OVERRIDE~
  COMPILE_BAF_TO_BCS
 BUT_ONLY_IF_IT_CHANGES
 
+STRING_SET_EVALUATE 58041 ~Mazzy, determined and valiant...~
+
+STRING_SET_EVALUATE 67880 ~So, it has come to this at last. All we have fought for will end at this single choice.~
+
 LAF HANDLE_AUDIO END
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/d/dialog.d~ 
@@ -68,7 +72,6 @@ EXTEND_TOP ~ar0809.bcs~ ~%MOD_FOLDER%/baf/ar0809.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~ar6200.bcs~ ~%MOD_FOLDER%/baf/ar6200.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~cut218g.bcs~ ~%MOD_FOLDER%/baf/cut218g.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~player1d.bcs~ ~%MOD_FOLDER%/baf/player1d.baf~ EVALUATE_BUFFER
-
 
 COPY_EXISTING ~C0MAZVAM.CRE~ ~OVERRIDE~
 WRITE_ASCII 0x248 ~C0MAZVAM~  #8  // override

@@ -1868,15 +1868,17 @@ SetGlobal("C0MazzyRomanceActive","GLOBAL",3)~ EXIT
 
 // tree of life
 
-ADD_TRANS_TRIGGER PLAYER1 33
-~!Global("C0MazzyRomanceActive","GLOBAL",2)~ IF ~IsValidForPartyDialog("Mazzy")~
-
-EXTEND_TOP PLAYER1 33 #1
-IF ~IsValidForPartyDialog("Mazzy") Global("C0MazzyRomanceActive","GLOBAL",2)~ EXTERN PLAYER1 C0MazzyToL
+EXTEND_BOTTOM PLAYER1 37
+IF ~!Global("C0MazzyRomanceActive","GLOBAL",2)~ EXTERN PLAYER1 C0MazzyToLOriginal
+IF ~Global("C0MazzyRomanceActive","GLOBAL",2)~ EXTERN PLAYER1 C0MazzyToL
 END
 
+CHAIN PLAYER1 C0MazzyToLOriginal
+~She who yearns to be a true paladin of Arvoreen and has accompanied you since you freed her from the Shade Lord.~
+COPY_TRANS PLAYER1 37
+
 CHAIN PLAYER1 C0MazzyToL
-~Mazzy: your stalwart and valiant companion, who has sworn her sword, bow, life and heart all to you. You know she will stand with you to the very end without a hint of fear... yet part of you still wonders if there is any doubt yet remaining within her.~
+~She has sworn her sword, bow, life and heart all to you. You know she will stand with you to the very end without a hint of fear... yet part of you still wonders if there is any doubt yet remaining within her.~
 END
   ++ ~Mazzy... I—~ EXTERN MAZZYJ C0MazzyToL.1
 
@@ -2300,9 +2302,6 @@ CHAIN SARVOLO C0MazzyToBVolo
 ~And of course... no degree of love from any other could ever be as equally pure, for the romantic tales of <CHARNAME> and Mazzy, truly two of the greatest heroes e'er to set foot in the realms, shall become inspiration for future knights and lovers alike.~
 COPY_TRANS SARVOLO 28
 
-ADD_TRANS_TRIGGER FINSOL01 27
-~!Global("C0MazzyRomanceActive","GLOBAL",2)~ IF ~IsValidForPartyDialog("Mazzy")~
-
 EXTEND_BOTTOM HGWRA01 18
 IF ~Global("C0MazzyRomanceActive","GLOBAL",2) InParty("Mazzy")~ EXTERN HGWRA01 GORION-MAZZY
 END
@@ -2337,12 +2336,17 @@ END
   ++ ~Enough! I won't allow this to continue!~ EXTERN HGWRA01 25
   + ~CheckStatGT(Player1,16,WIS)~ + ~Don't believe it, Mazzy! It isn't real!~ EXTERN HGWRA01 25
 
-EXTEND_TOP FINSOL01 27 #1
-IF ~IsValidForPartyDialog("Mazzy") Global("C0MazzyRomanceActive","GLOBAL",2) Global("C0MazzyRomanceSolarPers","GLOBAL",0)~ DO ~SetGlobal("C0MazzyRomanceSolarPers","GLOBAL",1)~ EXTERN MAZZY25J C0MazzyRomanceSolarPers
+EXTEND_BOTTOM MAZZY25J 0
+IF ~IsValidForPartyDialog("Mazzy") !Global("C0MazzyRomanceActive","GLOBAL",2)~ EXTERN MAZZY25J C0MazzyRomanceSolarOriginal
+IF ~IsValidForPartyDialog("Mazzy") Global("C0MazzyRomanceActive","GLOBAL",2)~ EXTERN MAZZY25J C0MazzyRomanceSolarPers
 END
 
+CHAIN MAZZY25J C0MazzyRomanceSolarOriginal
+~I would caution you if I could, <CHARNAME>. Great power comes with its own temptations and its own trials... have you not been through enough? I think you would be happier in the end living your own life.~ [MAZZ2517]
+EXTERN MAZZY25J 1
+
 CHAIN MAZZY25J C0MazzyRomanceSolarPers
-~So, the time... your time, though I have long seen it as ours both... it has finally come. I thought myself weak for not preparing adequately for it, but I suspect no mortal could ever truly be fully prepared for what is to come.~
+~The time... your time, though I have long seen it as ours both... it has finally come. I thought myself weak for not preparing adequately for it, but I suspect no mortal could ever truly be fully prepared for what is to come.~
 = ~<CHARNAME>, I...~
 = ~...No. What do you want, my love? It is alright. Tell me truthfully.~
 END
