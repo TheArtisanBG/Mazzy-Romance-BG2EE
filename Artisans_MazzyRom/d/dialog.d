@@ -847,9 +847,9 @@ DO ~IncrementGlobal("C0MazzyLoveTalk","GLOBAL",1)~ END
 
 CHAIN BMAZZY lt14.0
 ~Ahh... if that is what you prefer, so be it. Sleep well, my love.~
-DO ~RestParty()
-IncrementGlobal("C0MazzyLoveTalk","GLOBAL",2)
-RealSetGlobalTimer("C0MazzyLoveTalkTimer","GLOBAL",2500)~ EXIT
+DO ~IncrementGlobal("C0MazzyLoveTalk","GLOBAL",2)
+RealSetGlobalTimer("C0MazzyLoveTalkTimer","GLOBAL",2500)
+RestParty()~ EXIT
 
 CHAIN BMAZZY lt14.1
 ~'Beloved'... the word has become reassuringly familiar to me, and so quickly.~

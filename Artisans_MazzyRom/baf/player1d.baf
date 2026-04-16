@@ -11,7 +11,6 @@ IF
     TimeOfDay(NIGHT)
 THEN
   RESPONSE #100
-    RealSetGlobalTimer("C0MazzyLoveTalkTimer","GLOBAL",1)
     SetGlobal("C0MazzyLoveTalk","GLOBAL",28)
 	  ActionOverride("Mazzy",Interact(Player1))
 END
