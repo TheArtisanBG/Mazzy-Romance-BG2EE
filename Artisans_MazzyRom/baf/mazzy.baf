@@ -379,7 +379,9 @@ IF
     Global("C0MazzyLoveTalkTrademeet","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkTrademeet","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -402,7 +404,9 @@ IF
     Global("C0MazzyLoveTalkVyatri","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkVyatri","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -422,7 +426,9 @@ IF
     Global("C0MazzyLoveTalkCopperCoronet","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkCopperCoronet","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -441,7 +447,9 @@ IF
     Global("C0MazzyLoveTalkDragon","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkDragon","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -460,7 +468,9 @@ IF
     Global("C0MazzyLoveTalkDragon","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkDragon","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -479,7 +489,9 @@ IF
     Global("C0MazzyLoveTalkDragon","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkDragon","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -498,7 +510,9 @@ IF
     Global("C0MazzyLoveTalkBrynnlaw","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         SetGlobal("C0MazzyLoveTalkBrynnlaw","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -516,8 +530,10 @@ IF
     Global("C0MazzyLoveTalkSpellhold","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyLoveTalkSpellhold","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -533,8 +549,10 @@ IF
     Global("C0MazzyLoveTalkSuldanessellar","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyLoveTalkSuldanessellar","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -550,8 +568,10 @@ IF
     Global("C0MazzyLoveTalkSuldanessellar","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyLoveTalkSuldanessellar","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -570,8 +590,10 @@ IF
     Global("C0MazzyLoveTalkRadiantHeart","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyLoveTalkRadiantHeart","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -590,8 +612,10 @@ IF
     Global("C0MazzyLoveTalkRadiantHeart","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyLoveTalkRadiantHeart","GLOBAL",1)
+        SetInterrupt(TRUE)
         Interact(Player1)
 END
 
@@ -613,7 +637,9 @@ IF
     Global("C0MazzyRomancePhaereAngry","GLOBAL",0)
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
 	      Wait(2)
         SetGlobal("C0MazzyRomancePhaereAngry","GLOBAL",1)
-        Interact(Player1)
+        SetInterrupt(TRUE)
+        StartDialogNoSet(Player1)
 END

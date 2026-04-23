@@ -1852,7 +1852,7 @@ CHAIN IF WEIGHT #-1 ~Global("C0MazzyRomancePhaereAngry","GLOBAL",1)
 OR(2)
 Global("C0MazzyRomanceActive","GLOBAL",1)
 Global("C0MazzyRomanceActive","GLOBAL",2)
-Global("PhaereInnuendo","GLOBAL",3)~ THEN MAZZYJ phaere.nosleep
+Global("PhaereInnuendo","GLOBAL",3)~ THEN BMAZZY phaere.nosleep
 ~Oh, thank Arvoreen you have returned unharmed, <CHARNAME>. I dreaded every moment that evil woman had spent with you in her clutches.~
 DO ~SetGlobal("C0MazzyRomancePhaereAngry","GLOBAL",2)~
 = ~What she intended with you... well, only the truly innocent or foolish might not have suspected. It seems you managed to escape, one way or other... I am glad, truly. Regardless of whether the thought of me was on your mind or not...~
